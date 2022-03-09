@@ -1,0 +1,24 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'kotlin-kapt'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    implementation project(":domain")
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
+
+    // Hilt Core
+    implementation 'com.google.dagger:hilt-core:2.38.1'
+    kapt 'com.google.dagger:hilt-android-compiler:2.38.1'
+}
